@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a,
+span {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.main-container {
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: rgba(17, 24, 39);
+}
+
+section {
+    width: 85%;
+    margin: 0 auto;
+    background: rgba(17, 24, 39, 0.52);
+    backdrop-filter: blur(33px);
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

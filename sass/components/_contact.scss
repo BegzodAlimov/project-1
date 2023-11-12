@@ -1,0 +1,82 @@
+@use "../mixins/mixins" as mixin;
+@use "../vars/vars" as var;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+#contact {
+    .content{
+        @include mixin.card {
+            color: #FFF;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 0;
+        };
+    }
+
+
+    h1 {
+        text-align: center;
+        font-size: 42px;
+        font-weight: 500;
+        width: 90%;
+        margin: 0 auto;
+        @media screen and (max-width:769px) {
+            font-size: 35px;
+            
+        }
+    }
+
+    p {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        width: 90%;
+        margin: 0 auto;
+
+        margin: auto {
+            top: 20px;
+            bottom: 30px;
+        }
+
+        ;
+    }
+
+    form {
+        width: 90%;
+        max-width: 860px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    input {
+        border-radius: 70px;
+        background: linear-gradient(180deg, rgba(254, 254, 255, 0.03) 0%, rgba(255, 255, 255, 0.05) 100%);
+        box-shadow: 10px 24px 54px 0px rgba(0, 0, 0, 0.07);
+        padding-left: 30px;
+        width: 100%;
+        height: 70px;
+        flex-shrink: 0;
+        font-family: Rubik;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        color: white;
+        outline: none;
+    }
+
+    .btn {
+        @include mixin.btn {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            border-radius: 70px;
+            opacity: 0.9;
+            background: var(--Gardient, linear-gradient(90deg, #2563EB 0.36%, #D946EF 201.02%));
+
+        }
+    }
+}

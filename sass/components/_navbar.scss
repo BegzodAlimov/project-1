@@ -1,0 +1,178 @@
+@use "../mixins/mixins" as mixin;
+@use "../vars/vars" as var;
+
+header {
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+
+    nav {
+        font-size: 16px;
+        font-weight: 400;
+        height: 90px;
+        color: white;
+
+        .logo {
+            font-size: 20px;
+            gap: 10px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .fa-bars {
+            font-size: 20px;
+        }
+
+        .nav-links {
+            position: relative;
+            gap: 40px;
+
+            a:hover {
+                color: red;
+            }
+
+            label {
+                position: absolute;
+                top: 30px;
+                right: 50px;
+            }
+
+            @media screen and (max-width:850px) {
+                position: fixed;
+                z-index: 99;
+                top: 0;
+                left: -100%;
+                width: 60%;
+                height: 100vh;
+                background-color: rgba(17, 24, 39);
+                color: white;
+                flex-direction: column;
+                justify-content: center;
+                transition: left ease 1s;
+            }
+
+            @media screen and (max-width:426px) {
+                position: fixed;
+                z-index: 99;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(17, 24, 39);
+                color: white;
+                flex-direction: column;
+                justify-content: center;
+                transition: left ease 1s;
+            }
+
+            .btn {
+                @include mixin.btn;
+            }
+        }
+
+        #check {
+            display: none;
+
+            &:checked~.nav-links {
+                left: 0;
+            }
+        }
+
+        label {
+            display: none;
+            cursor: pointer;
+
+            @media screen and (max-width:850px) {
+                display: inline-block;
+            }
+        }
+    }
+
+.banner{
+    @media screen and (max-width:900px) {
+        flex-direction: column-reverse;
+    }
+
+}
+    .content {
+        width: 45%;
+        h1 {
+            background: var(--Gd, linear-gradient(90deg, #2563EB 0.11%, #D946EF 58.65%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+            font-size: 58px;
+            font-weight: 700;
+            line-height: 80px;
+            letter-spacing: 1.16px;
+            max-width: 546px;
+            @media screen and (max-width:1200px)  {
+                font-size: 45px;
+                line-height: 70px;
+            }
+            @media screen and (max-width:1032px) and (min-width:900px) {
+                font-size: 40px;
+                line-height: 60px;
+            }
+            @media screen and (max-width:465px) {
+                font-size: 35px;
+                line-height: 50px;
+            }
+            @media screen and (max-width:376px) {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+
+        p {
+            margin: 20px 0 40px;
+            color: #E5E7EB;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+            font-size: 16px;
+            line-height: 30px;
+            max-width: 534px;
+        }
+
+        span {
+            color: #F9FAFB;
+        }
+        .btn{
+            @include mixin.btn{
+            };
+        }
+        .media{
+            justify-content: flex-start;
+            gap:20px;
+            color: white;
+            font-size: 18px;
+            i{
+                font-size: 25px;
+                @media screen and (max-width:376px) {
+                    font-size: 20px;
+                }
+            }
+            @media screen and (max-width:376px) {
+                font-size: 16px;
+            }
+        }
+        @media screen and (max-width:900px) {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .image{
+        width: 55%;
+        transform: translateY(-30px);
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+        @media screen and (max-width:900px) {
+            width: 60%;
+        }
+    }
+}
